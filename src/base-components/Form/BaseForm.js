@@ -299,8 +299,8 @@ const BaseForm = {
         if (!result) {
           this.$notify({
             type: 'error',
-            title: 'Error!',
-            text: 'The form contains invalid fields.'
+            title: 'Erreur !',
+            text: 'Le formulaire contient des valeurs invalides.'
           });
           return false;
         }
@@ -350,8 +350,8 @@ const BaseForm = {
         if (typeof data.message === typeof undefined) {
           this.$notify({
             type: 'error',
-            title: 'Error!',
-            text: 'The form contains invalid fields.'
+            title: 'Erreur !',
+            text: 'Le formulaire contient des valeurs invalides.'
           });
         }
       }
