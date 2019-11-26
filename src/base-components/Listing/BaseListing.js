@@ -71,24 +71,24 @@ export default {
             default: function _default() {
                 return {
                     duplicateDialog: {
-                        title: 'Warning!',
-                        text: 'Do you really want to duplicate this item?',
-                        yes: 'Yes, duplicate.',
-                        no: 'No, cancel.',
-                        success_title: 'Success!',
-                        success: 'Item successfully duplicated.',
+                        title: 'Attention !',
+                        text: 'Êtes-vous certain de vouloir dupliquer cet item ?',
+                        yes: 'Oui, dupliquer.',
+                        no: 'Non, annuler.',
+                        success_title: 'Succès !',
+                        success: 'Item dupliqué avec succès.',
                         error_title: 'Erreur !',
-                        error: 'An error has occured.',
+                        error: 'Une erreur est survenue.',
                     },
                     deleteDialog: {
-                        title: 'Warning!',
-                        text: 'Do you really want to delete this item?',
-                        yes: 'Yes, delete.',
-                        no: 'No, cancel.',
-                        success_title: 'Success!',
-                        success: 'Item successfully deleted.',
+                        title: 'Attention !',
+                        text: 'Êtes-vous certain de vouloir supprimer cet item ?',
+                        yes: 'Oui, supprimer.',
+                        no: 'Non, annuler.',
+                        success_title: 'Succès !',
+                        success: 'Item supprimé avec succès.',
                         error_title: 'Erreur !',
-                        error: 'An error has occured.',
+                        error: 'Une erreur est survenue.',
                     }
                 };
 
@@ -186,7 +186,7 @@ export default {
             axios.get(url, options).then(response => {
                 this.checkAllItems(response.data.bulkItems);
             }, error => {
-                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'Une erreur est survenue.'});
             }).finally(() => {
                 this.bulkCheckingAllLoader = false;
             });
@@ -224,12 +224,12 @@ export default {
             const self = this;
 
             this.$modal.show('dialog', {
-                title: 'Warning!',
+                title: 'Attention !',
                 text: `Do you really want to delete ${this.clickedBulkItemsCount} selected items ?`,
                 buttons: [
-                    { title: 'No, cancel.' },
+                    { title: 'Non, annuler.' },
                     {
-                        title: '<span class="btn-dialog btn-danger">Yes, delete.<span>',
+                        title: '<span class="btn-dialog btn-danger">Oui, supprimer.<span>',
                         handler: () => {
                             this.$modal.hide('dialog');
                             axios.post(url, {
@@ -239,9 +239,9 @@ export default {
                             }).then(response => {
                                 self.bulkItems = {};
                                 this.loadData();
-                                this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : 'Item successfully deleted.'});
+                                this.$notify({ type: 'success', title: 'Succès !', text: response.data.message ? response.data.message : 'Item supprimé avec succès.'});
                             }, error => {
-                                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'Une erreur est survenue.'});
                             });
                         }
                     }
@@ -299,19 +299,19 @@ export default {
 
         deleteItem(url){
             this.$modal.show('dialog', {
-                title: 'Warning!',
-                text: 'Do you really want to delete this item?',
+                title: 'Attention !',
+                text: 'Êtes-vous certain de vouloir supprimer cet item ?',
                 buttons: [
-                    { title: 'No, cancel.' },
+                    { title: 'Non, annuler.' },
                     {
-                        title: '<span class="btn-dialog btn-danger">Yes, delete.<span>',
+                        title: '<span class="btn-dialog btn-danger">Oui, supprimer.<span>',
                         handler: () => {
                             this.$modal.hide('dialog');
                             axios.delete(url).then(response => {
                                 this.loadData();
-                                this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : 'Item successfully deleted.'});
+                                this.$notify({ type: 'success', title: 'Succès !', text: response.data.message ? response.data.message : 'Item supprimé avec succès.'});
                             }, error => {
-                                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'Une erreur est survenue.'});
                             });
                         }
                     }
@@ -321,10 +321,10 @@ export default {
 
         toggleSwitch(url, col, row){
             axios.post(url, row).then(response => {
-                this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : 'Item successfully changed.'});
+                this.$notify({ type: 'success', title: 'Succès !', text: response.data.message ? response.data.message : 'Item successfully changed.'});
             }, error => {
                 row[col] = !row[col];
-                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'Une erreur est survenue.'});
             });
         },
 
@@ -342,7 +342,7 @@ export default {
 
                         axios.post(url, { publish_now: true }).then(function (response) {
                             row.published_at = response.data.object.published_at;
-                            _this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
+                            _this.$notify({ type: 'success', title: 'Succès !', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
                         }, function (error) {
 
                             _this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
@@ -367,7 +367,7 @@ export default {
                         axios.post(url, { unpublish_now: true }).then(function (response) {
                             row.published_at = response.data.object.published_at;
                             row.published_to = response.data.object.published_to;
-                            _this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
+                            _this.$notify({ type: 'success', title: 'Succès !', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
                         }, function (error) {
 
                             _this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
@@ -424,7 +424,7 @@ export default {
 
                     axios.post(url, { published_at: mutablePublishedAt }).then(function (response) {
                         row.published_at = response.data.object.published_at;
-                        _this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
+                        _this.$notify({ type: 'success', title: 'Succès !', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
                     }, function (error) {
 
                         _this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });

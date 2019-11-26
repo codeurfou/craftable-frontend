@@ -104,7 +104,7 @@ _vue2.default.component('translation-listing', {
                 _this2.loadData(true);
             }, function (error) {
                 _this2.scanning = false;
-                _this2.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
+                _this2.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.' });
             });
         },
         filterGroup: function filterGroup(group) {
@@ -165,7 +165,7 @@ _vue2.default.component('translation-listing', {
                             }
                         }
                     }, function (error) {
-                        if (error.response.data === "Wrong syntax in your import") _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Wrong syntax in your import.' });else if (error.response.data === "Unsupported file type") _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Unsupported file type.' });else _this3.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
+                        if (error.response.data === "Wrong syntax in your import") _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Wrong syntax in your import.' });else if (error.response.data === "Unsupported file type") _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Unsupported file type.' });else _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.' });
                     });
                 });
             } else if (this.currentStep === 2) {
@@ -195,7 +195,7 @@ _vue2.default.component('translation-listing', {
                         _this3.numberOfSuccessfullyUpdatedTranslations = response.data.numberOfUpdatedTranslations;
                         _this3.loadData();
                     }, function (error) {
-                        _this3.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
+                        _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.' });
                     });
                 });
             }
@@ -244,10 +244,10 @@ _vue2.default.component('translation-listing', {
 
             axios.post(url, data).then(function (response) {
                 _this4.$modal.hide('edit-translation');
-                _this4.$notify({ type: 'success', title: 'Success!', text: 'Item successfully changed.' });
+                _this4.$notify({ type: 'success', title: 'Succès !', text: 'Item successfully changed.' });
                 _this4.loadData();
             }, function (error) {
-                _this4.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
+                _this4.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.' });
             });
         },
         onSubmitExport: function onSubmitExport() {

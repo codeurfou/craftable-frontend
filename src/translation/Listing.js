@@ -91,7 +91,7 @@ Vue.component('translation-listing', {
                     this.loadData(true);
                 }, error => {
                     this.scanning = false;
-                    this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
+                    this.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.'});
                 });
         },
 
@@ -162,7 +162,7 @@ Vue.component('translation-listing', {
                             else if (error.response.data === "Unsupported file type")
                                 this.$notify({ type: 'error', title: 'Erreur !', text: 'Unsupported file type.'});
                             else
-                                this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.'});
                         });
                     });
             } else if(this.currentStep === 2){
@@ -193,7 +193,7 @@ Vue.component('translation-listing', {
                             this.numberOfSuccessfullyUpdatedTranslations= response.data.numberOfUpdatedTranslations;
                             this.loadData();
                         }, error => {
-                            this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
+                            this.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.'});
                         });
                     });
             }
@@ -219,10 +219,10 @@ Vue.component('translation-listing', {
 
             axios.post(url, data).then(response => {
                 this.$modal.hide('edit-translation');
-                this.$notify({ type: 'success', title: 'Success!', text: 'Item successfully changed.'});
+                this.$notify({ type: 'success', title: 'Succès !', text: 'Item successfully changed.'});
                 this.loadData();
             }, error => {
-                this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
+                this.$notify({ type: 'error', title: 'Erreur !', text: 'Une erreur est survenue.'});
             });
         },
         onSubmitExport(){
