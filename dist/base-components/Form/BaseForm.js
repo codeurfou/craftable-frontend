@@ -350,7 +350,7 @@ var BaseForm = {
       if (_typeof(data.message) !== (typeof undefined === 'undefined' ? 'undefined' : _typeof(undefined))) {
         this.$notify({
           type: 'error',
-          title: 'Error!',
+          title: 'Erreur !',
           text: data.message
         });
       }

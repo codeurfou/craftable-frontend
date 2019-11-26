@@ -38,7 +38,7 @@ const BaseUpload = {
       default: function () { return [] }
     },
   },
-  data: function () { 
+  data: function () {
     return {
       mutableUploadedImages: this.uploadedImages,
       headers: {
@@ -63,7 +63,7 @@ const BaseUpload = {
                 
                 <input type="hidden" name="collection" :value="collection">
             </dropzone>`,
-  mounted: function () {     
+  mounted: function () {
     this.attachAlreadyUploadedMedia();
   },
   methods: {
@@ -78,7 +78,7 @@ const BaseUpload = {
 
     onUploadError: function (file, error) {
       let errorMessage = typeof error == 'string' ? error : error.message;
-      this.$notify({ type: 'error', title: 'Error!', text: errorMessage});
+      this.$notify({ type: 'error', title: 'Erreur !', text: errorMessage});
       $(file.previewElement).find('.dz-error-message span').text(errorMessage);
     },
 
@@ -102,12 +102,12 @@ const BaseUpload = {
         if(this.mutableUploadedImages) {
           _.each(this.mutableUploadedImages, (file, key) => {
 
-            this.$refs[this.collection].manuallyAddFile({ name: file['name'], 
-                                                          size: file['size'], 
-                                                          type: file['type'], 
+            this.$refs[this.collection].manuallyAddFile({ name: file['name'],
+                                                          size: file['size'],
+                                                          type: file['type'],
                                                           url: file['url'],
-                                                        }, 
-                                                        file['thumb_url'], 
+                                                        },
+                                                        file['thumb_url'],
                                                         false,
                                                         false,
                                                         {
@@ -115,12 +115,12 @@ const BaseUpload = {
                                                           addToFiles: true
                                                         });
           });
-        } 
+        }
       })
     },
 
     getFiles: function() {
-      var files = []; 
+      var files = [];
 
       _.each(this.mutableUploadedImages, (file, key) => {
         if(file.deleted) {

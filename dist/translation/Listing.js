@@ -104,7 +104,7 @@ _vue2.default.component('translation-listing', {
                 _this2.loadData(true);
             }, function (error) {
                 _this2.scanning = false;
-                _this2.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.' });
+                _this2.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
             });
         },
         filterGroup: function filterGroup(group) {
@@ -130,7 +130,7 @@ _vue2.default.component('translation-listing', {
             if (this.currentStep === 1) {
                 return this.$validator.validateAll().then(function (result) {
                     if (!result) {
-                        _this3.$notify({ type: 'error', title: 'Error!', text: 'The form contains invalid fields.' });
+                        _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Le formulaire contient des valeurs invalides.' });
                         return false;
                     }
 
@@ -165,13 +165,13 @@ _vue2.default.component('translation-listing', {
                             }
                         }
                     }, function (error) {
-                        if (error.response.data === "Wrong syntax in your import") _this3.$notify({ type: 'error', title: 'Error!', text: 'Wrong syntax in your import.' });else if (error.response.data === "Unsupported file type") _this3.$notify({ type: 'error', title: 'Error!', text: 'Unsupported file type.' });else _this3.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.' });
+                        if (error.response.data === "Wrong syntax in your import") _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Wrong syntax in your import.' });else if (error.response.data === "Unsupported file type") _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Unsupported file type.' });else _this3.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
                     });
                 });
             } else if (this.currentStep === 2) {
                 return this.$validator.validateAll().then(function (result) {
                     if (!result) {
-                        _this3.$notify({ type: 'error', title: 'Error!', text: 'The form contains invalid fields.' });
+                        _this3.$notify({ type: 'error', title: 'Erreur !', text: 'Le formulaire contient des valeurs invalides.' });
                         return false;
                     }
 
@@ -195,7 +195,7 @@ _vue2.default.component('translation-listing', {
                         _this3.numberOfSuccessfullyUpdatedTranslations = response.data.numberOfUpdatedTranslations;
                         _this3.loadData();
                     }, function (error) {
-                        _this3.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.' });
+                        _this3.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
                     });
                 });
             }
@@ -247,7 +247,7 @@ _vue2.default.component('translation-listing', {
                 _this4.$notify({ type: 'success', title: 'Success!', text: 'Item successfully changed.' });
                 _this4.loadData();
             }, function (error) {
-                _this4.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.' });
+                _this4.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.' });
             });
         },
         onSubmitExport: function onSubmitExport() {
@@ -255,7 +255,7 @@ _vue2.default.component('translation-listing', {
 
             return this.$validator.validateAll().then(function (result) {
                 if (!result) {
-                    _this5.$notify({ type: 'error', title: 'Error!', text: 'The form contains invalid fields.' });
+                    _this5.$notify({ type: 'error', title: 'Erreur !', text: 'Le formulaire contient des valeurs invalides.' });
                     return false;
                 }
 

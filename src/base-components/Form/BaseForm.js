@@ -358,7 +358,7 @@ const BaseForm = {
       if (typeof data.message !== typeof undefined) {
         this.$notify({
           type: 'error',
-          title: 'Error!',
+          title: 'Erreur !',
           text: data.message
         });
       }

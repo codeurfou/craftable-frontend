@@ -91,7 +91,7 @@ Vue.component('translation-listing', {
                     this.loadData(true);
                 }, error => {
                     this.scanning = false;
-                    this.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.'});
+                    this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
                 });
         },
 
@@ -122,7 +122,7 @@ Vue.component('translation-listing', {
                 return this.$validator.validateAll()
                     .then(result => {
                         if (!result) {
-                            this.$notify({ type: 'error', title: 'Error!', text: 'The form contains invalid fields.'});
+                            this.$notify({ type: 'error', title: 'Erreur !', text: 'Le formulaire contient des valeurs invalides.'});
                             return false;
                         }
 
@@ -158,18 +158,18 @@ Vue.component('translation-listing', {
                             }
                         }, error => {
                             if(error.response.data === "Wrong syntax in your import")
-                                this.$notify({ type: 'error', title: 'Error!', text: 'Wrong syntax in your import.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: 'Wrong syntax in your import.'});
                             else if (error.response.data === "Unsupported file type")
-                                this.$notify({ type: 'error', title: 'Error!', text: 'Unsupported file type.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: 'Unsupported file type.'});
                             else
-                                this.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
                         });
                     });
             } else if(this.currentStep === 2){
                 return this.$validator.validateAll()
                     .then(result => {
                         if (!result) {
-                            this.$notify({ type: 'error', title: 'Error!', text: 'The form contains invalid fields.'});
+                            this.$notify({ type: 'error', title: 'Erreur !', text: 'Le formulaire contient des valeurs invalides.'});
                             return false;
                         }
 
@@ -193,7 +193,7 @@ Vue.component('translation-listing', {
                             this.numberOfSuccessfullyUpdatedTranslations= response.data.numberOfUpdatedTranslations;
                             this.loadData();
                         }, error => {
-                            this.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.'});
+                            this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
                         });
                     });
             }
@@ -222,14 +222,14 @@ Vue.component('translation-listing', {
                 this.$notify({ type: 'success', title: 'Success!', text: 'Item successfully changed.'});
                 this.loadData();
             }, error => {
-                this.$notify({ type: 'error', title: 'Error!', text: 'An error has occured.'});
+                this.$notify({ type: 'error', title: 'Erreur !', text: 'An error has occured.'});
             });
         },
         onSubmitExport(){
             return this.$validator.validateAll()
                 .then(result => {
                     if (!result) {
-                        this.$notify({ type: 'error', title: 'Error!', text: 'The form contains invalid fields.'});
+                        this.$notify({ type: 'error', title: 'Erreur !', text: 'Le formulaire contient des valeurs invalides.'});
                         return false;
                     }
 

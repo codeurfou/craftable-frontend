@@ -77,7 +77,7 @@ export default {
                         no: 'No, cancel.',
                         success_title: 'Success!',
                         success: 'Item successfully duplicated.',
-                        error_title: 'Error!',
+                        error_title: 'Erreur !',
                         error: 'An error has occured.',
                     },
                     deleteDialog: {
@@ -87,7 +87,7 @@ export default {
                         no: 'No, cancel.',
                         success_title: 'Success!',
                         success: 'Item successfully deleted.',
-                        error_title: 'Error!',
+                        error_title: 'Erreur !',
                         error: 'An error has occured.',
                     }
                 };
@@ -186,7 +186,7 @@ export default {
             axios.get(url, options).then(response => {
                 this.checkAllItems(response.data.bulkItems);
             }, error => {
-                this.$notify({ type: 'error', title: 'Error!', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
             }).finally(() => {
                 this.bulkCheckingAllLoader = false;
             });
@@ -241,7 +241,7 @@ export default {
                                 this.loadData();
                                 this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : 'Item successfully deleted.'});
                             }, error => {
-                                this.$notify({ type: 'error', title: 'Error!', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
                             });
                         }
                     }
@@ -311,7 +311,7 @@ export default {
                                 this.loadData();
                                 this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : 'Item successfully deleted.'});
                             }, error => {
-                                this.$notify({ type: 'error', title: 'Error!', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
                             });
                         }
                     }
@@ -324,7 +324,7 @@ export default {
                 this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : 'Item successfully changed.'});
             }, error => {
                 row[col] = !row[col];
-                this.$notify({ type: 'error', title: 'Error!', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
+                this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : 'An error has occured.'});
             });
         },
 
@@ -345,7 +345,7 @@ export default {
                             _this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
                         }, function (error) {
 
-                            _this.$notify({ type: 'error', title: 'Error!', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
+                            _this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
                         });
                     }
                 }]
@@ -370,7 +370,7 @@ export default {
                             _this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
                         }, function (error) {
 
-                            _this.$notify({ type: 'error', title: 'Error!', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
+                            _this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
                         });
                     }
                 }]
@@ -427,7 +427,7 @@ export default {
                         _this.$notify({ type: 'success', title: 'Success!', text: response.data.message ? response.data.message : _this.trans[dialogType].success });
                     }, function (error) {
 
-                        _this.$notify({ type: 'error', title: 'Error!', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
+                        _this.$notify({ type: 'error', title: 'Erreur !', text: error.response.data.message ? error.response.data.message : _this.trans[dialogType].error });
                     });
                 },
 
